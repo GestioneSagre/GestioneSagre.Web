@@ -1,4 +1,5 @@
 ﻿@page "/"
+@using BlazorKit.Spinners
 @using GestioneSagre.Models.ViewModels.Versioni
 @using GestioneSagre.Web.Services.Services.Versioni
 @using GestioneSagre.Web.UI.Components
@@ -7,12 +8,12 @@
 <Welcome versione="@Testo" />
 
 @code {
-    private string Testo = string.Empty;
+    public string Testo = string.Empty;
 
-    private bool hasError = false;
-    private bool isLoading = true;
+    public bool hasError = false;
+    public bool isLoading = true;
 
-    //private SpinnerTemplate Spinner { get; set; } = SpinnerTemplate.Loader1;
+    private SpinnerTemplate Spinner { get; set; } = SpinnerTemplate.Loader1;
 
     protected override async Task OnInitializedAsync()
     {
