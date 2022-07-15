@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.Web.Server", "src\GestioneSagre.Web.Server\GestioneSagre.Web.Server.csproj", "{E55755C2-E281-4EA7-A831-5FB0E11CD7AE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.Web.Client", "src\GestioneSagre.Web.Client\GestioneSagre.Web.Client.csproj", "{FB8F6AAB-D462-4B45-9317-AF4F94E7C8E6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E55755C2-E281-4EA7-A831-5FB0E11CD7AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E55755C2-E281-4EA7-A831-5FB0E11CD7AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E55755C2-E281-4EA7-A831-5FB0E11CD7AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E55755C2-E281-4EA7-A831-5FB0E11CD7AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB8F6AAB-D462-4B45-9317-AF4F94E7C8E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB8F6AAB-D462-4B45-9317-AF4F94E7C8E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB8F6AAB-D462-4B45-9317-AF4F94E7C8E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB8F6AAB-D462-4B45-9317-AF4F94E7C8E6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3B330687-6BB5-4803-8696-36D7B8894E66}
+	EndGlobalSection
+EndGlobal
