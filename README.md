@@ -16,8 +16,11 @@ Free software that allows the web management of festivals and village festivals 
 ## Tech Stack
 
 **Client:** Blazor, .NET 6
+
 **Server:** Blazor, .NET 6
+
 **Database:** SQL Server
+
 **Graphics:** Bootstrap 4.4.1, Font Awesome Free 5.12.1
 
 
