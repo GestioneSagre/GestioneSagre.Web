@@ -1,3 +1,5 @@
+using System.Reflection;
+using System.Text.Json.Serialization;
 using GestioneSagre.Addons.Extensions;
 using GestioneSagre.Business.Services;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
@@ -17,8 +19,23 @@ public class Startup
     public void ConfigureServices(IServiceCollection services)
     {
 
-        services.AddControllersWithViews();
+        services.AddControllersWithViews()
+            .AddJsonOptions(options =>
+            {
+                // Info su: https://github.com/marcominerva/MyWebApiToolbox
+                options.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingDefault;
+            });
+
         services.AddRazorPages();
+        services.AddCors(options =>
+        {
+            options.AddDefaultPolicy(builder =>
+            {
+                builder.AllowAnyOrigin();
+                builder.AllowAnyHeader();
+                builder.AllowAnyMethod();
+            });
+        });
 
         services.AddDbContextPool<GestioneSagreDbContext>(optionBuilder =>
         {
@@ -43,9 +60,12 @@ public class Startup
             });
         });
 
+        var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+        var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+
         // Services - Custom Extension Method
         services.AddApplicationServices(Configuration);
-        services.AddSwaggerServices(Configuration);
+        services.AddSwaggerServices(Configuration, xmlPath);
 
         // Options
         services.Configure<KestrelServerOptions>(Configuration.GetSection("Kestrel"));
