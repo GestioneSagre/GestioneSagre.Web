@@ -29,7 +29,7 @@ Free software that allows the web management of festivals and village festivals 
 Clone the project
 
 ```bash
-  git clone https://github.com/AepServerNet/Blazor.GestioneSagre.git
+  git clone https://github.com/GestioneSagre/GestioneSagre.Web.git
 ```
 
 Go to the project directory
