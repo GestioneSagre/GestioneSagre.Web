@@ -24,7 +24,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Content Include="GestioneSagre.ico" />
+        <Content Include="GestioneSagre.ico" />
     </ItemGroup>
 
     <ItemGroup>
@@ -37,7 +37,17 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="5.0.17" />
+        <PackageReference Include="GestioneSagre.Addons" Version="1.0.13" />
+        <PackageReference Include="GestioneSagre.BaseLibrary" Version="1.0.13" />
+        <PackageReference Include="GestioneSagre.Business" Version="1.0.10" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.7">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.7">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
         <PackageReference Include="Nerdbank.GitVersioning" Version="3.5.108">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -46,6 +56,7 @@
 
     <ItemGroup>
         <ProjectReference Include="..\GestioneSagre.Web.Client\GestioneSagre.Web.Client.csproj" />
+        <ProjectReference Include="..\GestioneSagre.Web.Migrations\GestioneSagre.Web.Migrations.csproj" />
     </ItemGroup>
 
     <ItemGroup>

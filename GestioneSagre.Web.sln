@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.Web.Server", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.Web.Client", "src\GestioneSagre.Web.Client\GestioneSagre.Web.Client.csproj", "{FB8F6AAB-D462-4B45-9317-AF4F94E7C8E6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestioneSagre.Web.Migrations", "src\GestioneSagre.Web.Migrations\GestioneSagre.Web.Migrations.csproj", "{A72FC25B-BC72-4062-AEF7-57E3DB1BCC65}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{FB8F6AAB-D462-4B45-9317-AF4F94E7C8E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB8F6AAB-D462-4B45-9317-AF4F94E7C8E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB8F6AAB-D462-4B45-9317-AF4F94E7C8E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A72FC25B-BC72-4062-AEF7-57E3DB1BCC65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A72FC25B-BC72-4062-AEF7-57E3DB1BCC65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A72FC25B-BC72-4062-AEF7-57E3DB1BCC65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A72FC25B-BC72-4062-AEF7-57E3DB1BCC65}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
