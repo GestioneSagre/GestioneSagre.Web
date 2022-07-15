@@ -1,5 +1,36 @@
 ﻿@page "/"
+@using GestioneSagre.Models.ViewModels.Versioni
+@using GestioneSagre.Web.Services.Services.Versioni
+@using GestioneSagre.Web.UI.Components
+@inject IVersioneService versioneService
 
-<h1>Hello, world!</h1>
+<Welcome versione="@Testo" />
 
-Welcome to your new app.
+@code {
+    private string Testo = string.Empty;
+
+    private bool hasError = false;
+    private bool isLoading = true;
+
+    //private SpinnerTemplate Spinner { get; set; } = SpinnerTemplate.Loader1;
+
+    protected override async Task OnInitializedAsync()
+    {
+        isLoading = true;
+        await Task.Delay(1000);
+
+        try
+        {
+            VersioneViewModel testoVersione = await versioneService.GetVersione();
+            Testo = testoVersione.TestoVersione.ToString();
+        }
+        catch(Exception)
+        {
+            hasError = true;
+        }
+        finally
+        {
+            isLoading = false;
+        }
+    }
+}
