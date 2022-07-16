@@ -41,7 +41,7 @@
     <ItemGroup>
         <PackageReference Include="GestioneSagre.Addons" Version="1.0.14" />
         <PackageReference Include="GestioneSagre.BaseLibrary" Version="1.0.13" />
-        <PackageReference Include="GestioneSagre.Business" Version="1.0.10" />
+        <PackageReference Include="GestioneSagre.Business" Version="1.0.11" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.7">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
