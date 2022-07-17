@@ -1,8 +1,8 @@
 ﻿@page "/"
 @using BlazorKit.Spinners
 @using GestioneSagre.Models.ViewModels.Versioni
+@using GestioneSagre.Web.Services.Versioni
 @using GestioneSagre.Web.UI.Components
-@using GestioneSagre.Web.Client.Services.Versioni
 @inject IVersioneService versioneService
 
 <CustomBreadCrumb voiceMenu="@MenuBoard" />
@@ -10,7 +10,7 @@
 <Welcome versione="@TestoVer" />
 
 @code {
-    public string MenuBoard = "Home Page";
+    public string MenuBoard = "Gestione Sagre;Home Page";
     public string TestoVer = string.Empty;
 
     public bool hasError = false;

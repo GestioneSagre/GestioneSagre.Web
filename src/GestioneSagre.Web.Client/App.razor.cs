@@ -32,7 +32,7 @@ public class AppBase : ComponentBase, IDisposable
                     {
                         var assemblies = await AssemblyLoader.LoadAssembliesAsync(new List<string>
                         {
-                            "GestioneSagre.Web.UI.dll"
+                            "GestioneSagre.Modules.App.dll"
                         });
 
                         LazyLoadedAssemblies.AddRange(assemblies);

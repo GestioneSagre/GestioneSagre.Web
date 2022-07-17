@@ -8,11 +8,17 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="GestioneSagre.Web.UI" Version="1.0.9" />
-        <PackageReference Include="GestioneSagre.WebUILibrary" Version="1.0.6" />
+        <PackageReference Include="BlazorKit.Spinners" Version="0.7.16" />
+        <PackageReference Include="GestioneSagre.Web.Services" Version="1.0.7" />
+        <PackageReference Include="GestioneSagre.Web.UI" Version="1.0.12" />
         <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.7" />
         <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.7" PrivateAssets="all" />
+        <PackageReference Include="Scrutor" Version="4.2.0" />
         <PackageReference Include="System.Net.Http.Json" Version="6.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\modules\GestioneSagre.Modules.App\GestioneSagre.Modules.App.csproj" />
     </ItemGroup>
 
     <ItemGroup>
@@ -20,11 +26,10 @@
     </ItemGroup>
 
     <ItemGroup>
-        <BlazorWebAssemblyLazyLoad Include="GestioneSagre.Web.UI.dll" />
+        <BlazorWebAssemblyLazyLoad Include="GestioneSagre.Modules.App.dll" />
     </ItemGroup>
 
     <ItemGroup>
         <Folder Include="wwwroot\images\" />
     </ItemGroup>
-
 </Project>
