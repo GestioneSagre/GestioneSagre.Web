@@ -37,7 +37,6 @@
 
             <div class="form-group mb-3">
                 <MudTextField @bind-Value="model.Oggetto" Label="Oggetto" Testo="Richiesta di supporto" ReadOnly="true" Disabled="true" Variant="Variant.Outlined" />
-                @*<ValidationMessage For="@(() => model.Oggetto)" />*@
             </div>
 
             <div class="form-group mb-3">
@@ -54,13 +53,15 @@
 </EditForm>
 
 @code {
-    private InputMailSender model = new()
-    {
-        MittenteNominativo = string.Empty,
-        MittenteEmail = string.Empty,
-        Oggetto = "Richiesta di supporto",
-        Messaggio = string.Empty
-    };
+    //private InputMailSender model = new()
+    //{
+    //    MittenteNominativo = string.Empty,
+    //    MittenteEmail = string.Empty,
+    //    Oggetto = "Richiesta di supporto",
+    //    Messaggio = string.Empty
+    //};
+
+    private InputMailSender model = new();
 
     private string typeAlert = string.Empty;
     private string textAlert = string.Empty;
@@ -76,13 +77,15 @@
             typeAlert = "confirm";
             textAlert = "Richiesta di supporto inviata con successo !";
 
-            model = new()
-            {
-                MittenteNominativo = string.Empty,
-                MittenteEmail = string.Empty,
-                Oggetto = "Richiesta di supporto",
-                Messaggio = string.Empty
-            };
+            model = new();
+
+            //model = new()
+            //{
+            //    MittenteNominativo = string.Empty,
+            //    MittenteEmail = string.Empty,
+            //    Oggetto = "Richiesta di supporto",
+            //    Messaggio = string.Empty
+            //};
         }
         catch (Exception ex)
         {
@@ -93,6 +96,14 @@
 
     private void Cancel()
     {
+        //model = new()
+        //{
+        //    MittenteNominativo = string.Empty,
+        //    MittenteEmail = string.Empty,
+        //    Oggetto = "Richiesta di supporto",
+        //    Messaggio = string.Empty
+        //};
+
         model = new();
     }
 }
