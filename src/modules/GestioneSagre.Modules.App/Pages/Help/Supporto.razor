@@ -1,0 +1,98 @@
+﻿@page "/help/supporto"
+@using GestioneSagre.Models.InputModels.InvioEmail
+@using GestioneSagre.Web.Services.Supporto
+@using GestioneSagre.Web.UI.Components
+@using Microsoft.AspNetCore.Components.Forms
+@using MudBlazor
+@inject ISupportoService supportoService
+
+<CustomBreadCrumb voiceMenu="@MenuBoard" />
+
+<h1>Richiesta di supporto</h1>
+<div class="testo"><br /></div>
+
+<CustomAlert severity="Severity.Warning" dense="true" testo="<b>ATTENZIONE:</b> Per inviare la richiesta di supporto, &egrave; necessaria una connessione ad internet attiva." />
+<div class="testo"><br /></div>
+
+<AlertMessage tipoAlert="@typeAlert" testo="@textAlert"></AlertMessage>
+<div class="testo"><br /></div>
+
+<EditForm Model="@model" OnValidSubmit="Submit">
+    <div class="row">
+        <div class="col-md-8"><DataAnnotationsValidator />
+        <ValidationSummary /></div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="form-group mb-3">
+                <MudTextField @bind-Value="model.MittenteNominativo" Label="Nominativo" Variant="Variant.Outlined" />
+                <ValidationMessage For="@(() => model.MittenteNominativo)" />
+            </div>
+
+            <div class="form-group mb-3">
+                <MudTextField @bind-Value="model.MittenteEmail" Label="Indirizzo Email" Variant="Variant.Outlined" />
+                <ValidationMessage For="@(() => model.MittenteEmail)" />
+            </div>
+
+            <div class="form-group mb-3">
+                <MudTextField @bind-Value="model.Oggetto" Label="Oggetto" Testo="Richiesta di supporto" ReadOnly="true" Disabled="true" Variant="Variant.Outlined" />
+                @*<ValidationMessage For="@(() => model.Oggetto)" />*@
+            </div>
+
+            <div class="form-group mb-3">
+                <MudTextField @bind-Value="model.Messaggio" Label="Messaggio" Lines="5" Variant="Variant.Outlined" />
+                <ValidationMessage For="@(() => model.Messaggio)" />
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group mt-3">
+        <button type="submit" class="btn btn-outline-primary">Invia richiesta</button>
+        <button type="button" class="btn btn-outline-secondary" @onclick="Cancel">Annulla</button>
+    </div>
+</EditForm>
+
+@code {
+    private InputMailSender model = new()
+    {
+        MittenteNominativo = string.Empty,
+        MittenteEmail = string.Empty,
+        Oggetto = "Richiesta di supporto",
+        Messaggio = string.Empty
+    };
+
+    private string typeAlert = string.Empty;
+    private string textAlert = string.Empty;
+
+    public string MenuBoard = "Gestione Sagre;Help;Supporto";
+
+    private async Task Submit()
+    {
+        try
+        {
+            await supportoService.InvioEmailSupporto(model);
+
+            typeAlert = "confirm";
+            textAlert = "Richiesta di supporto inviata con successo !";
+
+            model = new()
+            {
+                MittenteNominativo = string.Empty,
+                MittenteEmail = string.Empty,
+                Oggetto = "Richiesta di supporto",
+                Messaggio = string.Empty
+            };
+        }
+        catch (Exception ex)
+        {
+            typeAlert = "error";
+            textAlert = ex.Message;
+        }
+    }
+
+    private void Cancel()
+    {
+        model = new();
+    }
+}
