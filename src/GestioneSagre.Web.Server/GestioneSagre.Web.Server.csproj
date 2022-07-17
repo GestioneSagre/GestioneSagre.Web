@@ -39,7 +39,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="GestioneSagre.Addons" Version="1.0.16" />
+        <PackageReference Include="GestioneSagre.Addons" Version="1.0.18" />
         <PackageReference Include="GestioneSagre.BaseLibrary" Version="1.0.14" />
         <PackageReference Include="GestioneSagre.Business" Version="1.0.12" />
         <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="6.0.7" />
