@@ -52,3 +52,8 @@ a, .btn-link {
 .iconaMenu {
     padding-right: 10px;
 }
+
+.breadcustom {
+    color: #0366d6;
+    text-decoration: none;
+}

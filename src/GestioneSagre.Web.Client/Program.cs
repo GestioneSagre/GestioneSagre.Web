@@ -1,4 +1,4 @@
-using GestioneSagre.Web.Services.Services.Versioni;
+using GestioneSagre.Web.Client.Services.Versioni;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using MudBlazor;
@@ -16,7 +16,7 @@ namespace GestioneSagre.Web.Client
 
             builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 
-            // Services SCOPED
+            //Services SCOPED
             builder.Services.Scan(scan => scan.FromAssemblyOf<VersioneService>()
                  .AddClasses(classes => classes.Where(type => type.Name.EndsWith("Service")))
                  .AsImplementedInterfaces()

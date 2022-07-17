@@ -1,14 +1,17 @@
 ﻿@page "/"
 @using BlazorKit.Spinners
 @using GestioneSagre.Models.ViewModels.Versioni
-@using GestioneSagre.Web.Services.Services.Versioni
 @using GestioneSagre.Web.UI.Components
+@using GestioneSagre.Web.Client.Services.Versioni
 @inject IVersioneService versioneService
 
-<Welcome versione="@Testo" />
+<CustomBreadCrumb voiceMenu="@MenuBoard" />
+
+<Welcome versione="@TestoVer" />
 
 @code {
-    public string Testo = string.Empty;
+    public string MenuBoard = "Home Page";
+    public string TestoVer = string.Empty;
 
     public bool hasError = false;
     public bool isLoading = true;
@@ -23,7 +26,7 @@
         try
         {
             VersioneViewModel testoVersione = await versioneService.GetVersione();
-            Testo = testoVersione.TestoVersione.ToString();
+            TestoVer = testoVersione.TestoVersione.ToString();
         }
         catch(Exception)
         {
