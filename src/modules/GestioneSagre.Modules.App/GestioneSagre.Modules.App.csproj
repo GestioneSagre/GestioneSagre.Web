@@ -12,7 +12,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="GestioneSagre.Web.Services" Version="1.0.7" />
+        <PackageReference Include="GestioneSagre.Web.Services" Version="1.0.8" />
         <PackageReference Include="GestioneSagre.Models" Version="1.0.12" />
         <PackageReference Include="GestioneSagre.Web.UI" Version="1.0.13" />
         <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.7" />
