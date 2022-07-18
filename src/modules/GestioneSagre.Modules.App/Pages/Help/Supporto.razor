@@ -24,24 +24,21 @@
     </div>
 
     <div class="row">
+        <div class="col-md-8"><br /></div>
+    </div>
+
+    <div class="row">
         <div class="col-md-8">
             <div class="form-group mb-3">
-                <MudTextField @bind-Value="model.MittenteNominativo" Label="Nominativo" Variant="Variant.Outlined" />
-                <ValidationMessage For="@(() => model.MittenteNominativo)" />
+                <MudTextField @bind-Value="model.MittenteNominativo" Label="Nominativo Mittente" Variant="Variant.Outlined" />
             </div>
 
             <div class="form-group mb-3">
-                <MudTextField @bind-Value="model.MittenteEmail" Label="Indirizzo Email" Variant="Variant.Outlined" />
-                <ValidationMessage For="@(() => model.MittenteEmail)" />
-            </div>
-
-            <div class="form-group mb-3">
-                <MudTextField @bind-Value="model.Oggetto" Label="Oggetto" Testo="Richiesta di supporto" ReadOnly="true" Disabled="true" Variant="Variant.Outlined" />
+                <MudTextField @bind-Value="model.MittenteEmail" Label="Indirizzo Email Mittente" Variant="Variant.Outlined" />
             </div>
 
             <div class="form-group mb-3">
                 <MudTextField @bind-Value="model.Messaggio" Label="Messaggio" Lines="5" Variant="Variant.Outlined" />
-                <ValidationMessage For="@(() => model.Messaggio)" />
             </div>
         </div>
     </div>
@@ -53,15 +50,12 @@
 </EditForm>
 
 @code {
-    //private InputMailSender model = new()
-    //{
-    //    MittenteNominativo = string.Empty,
-    //    MittenteEmail = string.Empty,
-    //    Oggetto = "Richiesta di supporto",
-    //    Messaggio = string.Empty
-    //};
-
-    private InputMailSender model = new();
+    private InputMailSupportoSender model = new()
+    {
+        MittenteNominativo = string.Empty,
+        MittenteEmail = string.Empty,
+        Messaggio = string.Empty
+    };
 
     private string typeAlert = string.Empty;
     private string textAlert = string.Empty;
@@ -77,15 +71,7 @@
             typeAlert = "confirm";
             textAlert = "Richiesta di supporto inviata con successo !";
 
-            model = new();
-
-            //model = new()
-            //{
-            //    MittenteNominativo = string.Empty,
-            //    MittenteEmail = string.Empty,
-            //    Oggetto = "Richiesta di supporto",
-            //    Messaggio = string.Empty
-            //};
+            ResetForm();
         }
         catch (Exception ex)
         {
@@ -96,14 +82,16 @@
 
     private void Cancel()
     {
-        //model = new()
-        //{
-        //    MittenteNominativo = string.Empty,
-        //    MittenteEmail = string.Empty,
-        //    Oggetto = "Richiesta di supporto",
-        //    Messaggio = string.Empty
-        //};
+        ResetForm();
+    }
 
-        model = new();
+    private void ResetForm()
+    {
+        model = new()
+        {
+            MittenteNominativo = string.Empty,
+            MittenteEmail = string.Empty,
+            Messaggio = string.Empty
+        };
     }
 }
