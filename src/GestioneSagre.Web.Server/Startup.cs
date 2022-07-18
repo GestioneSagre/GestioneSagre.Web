@@ -2,6 +2,7 @@ using System.Reflection;
 using System.Text.Json.Serialization;
 using GestioneSagre.Addons.Extensions;
 using GestioneSagre.Business.Services;
+using GestioneSagre.Tools.Options;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Microsoft.EntityFrameworkCore;
 
@@ -45,16 +46,13 @@ public class Startup
 
             optionBuilder.UseSqlServer(connectionString, options =>
             {
+                // Info su: https://docs.microsoft.com/it-it/ef/core/managing-schemas/migrations/projects?tabs=dotnet-core-cli
+
                 // To perform a new migration you need:
-
                 // 1. Open the Package Manager Console panel
-
                 // 2. In the Default Project drop-down menu make sure that the selected project is GestioneSagre.Web.Server.
-
                 // 3. Finally run the command Add-Migration NAME-MIGRATION -Project GestioneSagre.Web.Migrations
                 // where NAME-MIGRATION represents the name of the migration to create (example: InitialMigration)
-
-                // Info su: https://docs.microsoft.com/it-it/ef/core/managing-schemas/migrations/projects?tabs=dotnet-core-cli
                 options.MigrationsAssembly("GestioneSagre.Web.Migrations");
                 options.EnableRetryOnFailure(maxRetryCount, maxRetryDelay, null);
             });
@@ -69,6 +67,7 @@ public class Startup
 
         // Options
         services.Configure<KestrelServerOptions>(Configuration.GetSection("Kestrel"));
+        services.Configure<SmtpOptions>(Configuration.GetSection("Smtp"));
     }
 
     public void Configure(WebApplication app)
