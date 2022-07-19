@@ -106,7 +106,7 @@ public class VersioneController : BaseController
     }
 
     /// <summary>
-    /// Permette di cancellare una nuova versione software
+    /// Permette di cancellare una specifica versione software
     /// </summary>
     /// <response code="200">Versione software cancellata con successo</response>
     /// <response code="400">Versione software non cancellata causa errori</response>
