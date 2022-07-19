@@ -87,11 +87,12 @@ public class Startup
             app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Gestione Sagre v1"));
         }
 
-        app.UseApplicationServices(); // Custom Extension Method
         app.UseBlazorFrameworkFiles();
+        app.UseApplicationServices(); // Custom Extension Method
 
         app.UseEndpoints(endpoints =>
         {
+            endpoints.MapRazorPages();
             endpoints.MapControllers();
             endpoints.MapFallbackToFile("index.html");
         });
