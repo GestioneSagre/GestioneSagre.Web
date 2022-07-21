@@ -42,6 +42,7 @@ public class Startup
         {
             var maxRetryCount = Configuration.GetSection("Database").GetValue<int>("maxRetryCount");
             var maxRetryDelay = TimeSpan.FromSeconds(Configuration.GetSection("Database").GetValue<double>("maxRetryDelay"));
+
             var connectionString = Configuration.GetSection("ConnectionStrings").GetValue<string>("Default");
 
             optionBuilder.UseSqlServer(connectionString, options =>
@@ -51,8 +52,7 @@ public class Startup
                 // To perform a new migration you need:
                 // 1. Open the Package Manager Console panel
                 // 2. In the Default Project drop-down menu make sure that the selected project is GestioneSagre.Web.Server.
-                // 3. Finally run the command Add-Migration NAME-MIGRATION -Project GestioneSagre.Web.Migrations
-                // where NAME-MIGRATION represents the name of the migration to create (example: InitialMigration)
+                // 3. Finally run the command Add-Migration NAME-MIGRATION -Project GestioneSagre.Web.Migrations where NAME-MIGRATION represents the name of the migration to create (example: InitialMigration)
                 options.MigrationsAssembly("GestioneSagre.Web.Migrations");
                 options.EnableRetryOnFailure(maxRetryCount, maxRetryDelay, null);
             });
