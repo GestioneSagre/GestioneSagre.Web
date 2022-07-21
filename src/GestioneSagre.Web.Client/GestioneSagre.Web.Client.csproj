@@ -31,5 +31,6 @@
 
     <ItemGroup>
         <Folder Include="wwwroot\images\" />
+        <Folder Include="wwwroot\lib\font-awesome\" />
     </ItemGroup>
 </Project>
