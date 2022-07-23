@@ -41,7 +41,7 @@
 
     <ItemGroup>
         <PackageReference Include="GestioneSagre.Addons" Version="1.0.22" />
-        <PackageReference Include="GestioneSagre.Business" Version="1.0.12" />
+        <PackageReference Include="GestioneSagre.Business" Version="1.0.13" />
         <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="6.0.7" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.7">
             <PrivateAssets>all</PrivateAssets>

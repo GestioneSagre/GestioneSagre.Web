@@ -52,7 +52,8 @@ public class Startup
                 // To perform a new migration you need:
                 // 1. Open the Package Manager Console panel
                 // 2. In the Default Project drop-down menu make sure that the selected project is GestioneSagre.Web.Server.
-                // 3. Finally run the command Add-Migration NAME-MIGRATION -Project GestioneSagre.Web.Migrations where NAME-MIGRATION represents the name of the migration to create (example: InitialMigration)
+                // 3. Run the command Add-Migration NAME-MIGRATION -Project GestioneSagre.Web.Migrations where NAME-MIGRATION represents the name of the migration to create (example: InitialMigration)
+                // 4. Finally run the command Update-Database -Project GestioneSagre.Web.Migrations
                 options.MigrationsAssembly("GestioneSagre.Web.Migrations");
                 options.EnableRetryOnFailure(maxRetryCount, maxRetryDelay, null);
             });
