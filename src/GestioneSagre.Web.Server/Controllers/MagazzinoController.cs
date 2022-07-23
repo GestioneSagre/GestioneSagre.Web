@@ -14,7 +14,7 @@ public class MagazzinoController : BaseController
     }
 
     #region "CATEGORIE"
-    //GetElencoCategorieAsync
+    //GetCategorieAsync
 
     //CreateCategoriaAsync
 
