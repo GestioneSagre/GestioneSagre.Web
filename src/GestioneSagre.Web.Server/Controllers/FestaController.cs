@@ -25,7 +25,7 @@ public class FestaController : BaseController
     [HttpGet]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<IActionResult> GetElencoFesteAsync()
+    public async Task<IActionResult> GetFesteAsync()
     {
         try
         {
@@ -53,7 +53,7 @@ public class FestaController : BaseController
     [HttpPost]
     [ProducesResponseType(typeof(FestaCreateInputModel), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<IActionResult> CreateFesta([FromBody] FestaCreateInputModel inputModel)
+    public async Task<IActionResult> CreateFestaAsync([FromBody] FestaCreateInputModel inputModel)
     {
         try
         {
@@ -76,7 +76,7 @@ public class FestaController : BaseController
     [HttpGet("{guidFesta}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<IActionResult> ShowFesta(string guidFesta)
+    public async Task<IActionResult> GetFestaAsync(string guidFesta)
     {
         try
         {
@@ -91,7 +91,7 @@ public class FestaController : BaseController
     }
 
     /// <summary>
-    /// Permette la modifica di una nuova festa
+    /// Permette la modifica di una festa
     /// </summary>
     /// <response code="200">Modifica della festa terminata con successo</response>
     /// <response code="400">Modifica della festa non terminata causa errori</response>
@@ -99,7 +99,7 @@ public class FestaController : BaseController
     [HttpPut]
     [ProducesResponseType(typeof(FestaEditInputModel), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<IActionResult> ModifyFesta([FromBody] FestaEditInputModel inputModel)
+    public async Task<IActionResult> EditFestaAsync([FromBody] FestaEditInputModel inputModel)
     {
         try
         {
@@ -122,7 +122,7 @@ public class FestaController : BaseController
     [HttpDelete]
     [ProducesResponseType(typeof(FestaDeleteInputModel), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<IActionResult> DeleteFesta([FromBody] FestaDeleteInputModel inputModel)
+    public async Task<IActionResult> DeleteFestaAsync([FromBody] FestaDeleteInputModel inputModel)
     {
         try
         {
