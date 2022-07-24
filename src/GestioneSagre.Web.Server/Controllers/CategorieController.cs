@@ -9,17 +9,16 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace GestioneSagre.Web.Server.Controllers;
 
-public class MagazzinoController : BaseController
+public class CategorieController : BaseController
 {
     private readonly ICategorieService categoriaService;
     private readonly IProdottiService prodottoService;
-    public MagazzinoController(ICategorieService categoriaService, IProdottiService prodottoService)
+    public CategorieController(ICategorieService categoriaService, IProdottiService prodottoService)
     {
         this.categoriaService = categoriaService;
         this.prodottoService = prodottoService;
     }
 
-    #region "CATEGORIE"
     /// <summary>
     /// Mostra l'elenco delle categorie
     /// </summary>
@@ -102,9 +101,8 @@ public class MagazzinoController : BaseController
         }
     }
 
-    //DeleteCategoriaAsync (solo se alla categoria non vi sono associati prodotti)
     /// <summary>
-    /// Permette la cancellazione di una categoria
+    /// Permette la cancellazione di una categoria, solo se alla categoria non vi sono associati prodotti
     /// </summary>
     /// <response code="200">Cancellazione della categoria terminata con successo</response>
     /// <response code="400">Cancellazione della categoria non terminata causa errori</response>
@@ -136,15 +134,4 @@ public class MagazzinoController : BaseController
             return BadRequest(ex.Message);
         }
     }
-    #endregion
-
-    #region "PRODOTTI"
-    //GetElencoProdottiAsync
-
-    //CreateProdottoAsync
-
-    //EditProdottoAsync
-
-    //DeleteProdottoAsync (valutare se implementare questa funzione)
-    #endregion
 }
