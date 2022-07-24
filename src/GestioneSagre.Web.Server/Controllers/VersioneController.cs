@@ -25,7 +25,7 @@ public class VersioneController : BaseController
     [HttpGet]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<IActionResult> GetElencoFesteAsync()
+    public async Task<IActionResult> GetVersioniAsync()
     {
         try
         {
