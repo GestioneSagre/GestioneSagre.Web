@@ -21,7 +21,7 @@ Free software that allows the web management of festivals and village festivals 
 
 **Database:** SQL Server
 
-**Graphics:** Bootstrap 4.4.1, Font Awesome Free 5.12.1
+**Graphics:** Bootstrap 5.2.0, Font Awesome Free 6.1.1
 
 
 ## Run Locally
