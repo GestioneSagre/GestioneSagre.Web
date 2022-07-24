@@ -10,7 +10,3 @@ public class BaseController : ControllerBase
 {
 
 }
-//public class BaseController
-//{
-
-//}
