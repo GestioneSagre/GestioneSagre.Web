@@ -24,7 +24,7 @@ public class LogoController : BaseController
     [ProducesResponseType(typeof(LogoEditInputModel), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesDefaultResponseType]
-    public async Task<IActionResult> EditLogo([FromForm] LogoEditInputModel inputModel)
+    public async Task<IActionResult> EditLogoAsync([FromForm] LogoEditInputModel inputModel)
     {
         try
         {
