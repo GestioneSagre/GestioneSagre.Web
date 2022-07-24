@@ -18,15 +18,75 @@ public class AppBase : ComponentBase, IDisposable
         {
             switch (args.Path)
             {
-                //case "fetchdata":
-                //    {
-                //        var assemblies = await AssemblyLoader.LoadAssembliesAsync(new List<string>
-                //        {
-                //            "GestioneSagre.Web.Client.WeatherForecast.dll"
-                //        });
-                //        LazyLoadedAssemblies.AddRange(assemblies);
-                //        break;
-                //    }
+                case "inizio":
+                    {
+                        var assemblies = await AssemblyLoader.LoadAssembliesAsync(new List<string>
+                        {
+                            "GestioneSagre.Modules.Init.dll" //Configurazione iniziale
+                        });
+                        LazyLoadedAssemblies.AddRange(assemblies);
+                        break;
+                    }
+
+                case "configurazione":
+                    {
+                        var assemblies = await AssemblyLoader.LoadAssembliesAsync(new List<string>
+                        {
+                            "GestioneSagre.Modules.Configuration.dll" //Configurazione Prodotti, Categorie, Logo, Menu
+                        });
+                        LazyLoadedAssemblies.AddRange(assemblies);
+                        break;
+                    }
+
+                case "utenti":
+                    {
+                        var assemblies = await AssemblyLoader.LoadAssembliesAsync(new List<string>
+                        {
+                            "GestioneSagre.Modules.Users.dll" //Configurazione Operatori (Ruoli e permessi)
+                        });
+                        LazyLoadedAssemblies.AddRange(assemblies);
+                        break;
+                    }
+
+                case "cassa":
+                    {
+                        var assemblies = await AssemblyLoader.LoadAssembliesAsync(new List<string>
+                        {
+                            "GestioneSagre.Modules.Cashier.dll" //Gestione dello scontrino, movimenti cassa, prenotazioni
+                        });
+                        LazyLoadedAssemblies.AddRange(assemblies);
+                        break;
+                    }
+
+                case "stampe":
+                    {
+                        var assemblies = await AssemblyLoader.LoadAssembliesAsync(new List<string>
+                        {
+                            "GestioneSagre.Modules.Prints.dll" //Stampe prenotazioni, menu, contabilità cassa
+                        });
+                        LazyLoadedAssemblies.AddRange(assemblies);
+                        break;
+                    }
+
+                case "statistiche":
+                    {
+                        var assemblies = await AssemblyLoader.LoadAssembliesAsync(new List<string>
+                        {
+                            "GestioneSagre.Modules.Statistics.dll" //Statistiche consumi giornata e totali, riepilogo cassa ed incassi
+                        });
+                        LazyLoadedAssemblies.AddRange(assemblies);
+                        break;
+                    }
+
+                case "dashboard":
+                    {
+                        var assemblies = await AssemblyLoader.LoadAssembliesAsync(new List<string>
+                        {
+                            "GestioneSagre.Modules.Dashboard.dll" //Pannello principale dell'applicazione
+                        });
+                        LazyLoadedAssemblies.AddRange(assemblies);
+                        break;
+                    }
 
                 default:
                     {
